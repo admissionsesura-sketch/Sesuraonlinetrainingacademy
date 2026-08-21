@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesura Training Academy | Clinical Research 90-Day Program</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c5aa0;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2c5aa0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2c5aa0;
+        }
+
+        .about-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            line-height: 1.8;
+        }
+
+        .mission-statement {
+            background: #f0f4ff;
+            border-left: 4px solid #2c5aa0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-overview {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .program-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .detail-box {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8ecf8 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .detail-box h4 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-top: 3px solid #ff6b35;
+        }
+
+        .highlight-item h4 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid #ff6b35;
+        }
+
+        .testimonial-text {
+            color: #555;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #2c5aa0;
+            font-weight: 600;
+        }
+
+        .contact-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            color: #2c5aa0;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: #1e3a5f;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Sesura Training Academy</div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#program">Program</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">India's First Online Learning Academy for Clinical Research</div>
+            <h1>Transform Your Career in Clinical Research</h1>
+            <p class="hero-subtitle">Master clinical research in just 90 days with industry experts and 100% placement assistance</p>
+            <a href="#contact" class="cta-button">Enroll Now</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Sesura Training Academy</h2>
+        <div class="about-content">
+            <p style="margin-bottom: 1rem;">We believe that financial constraints should never limit human potential. Our mission is to democratize high-quality clinical research education by making it affordable for everyone, while bridging the gap between learning and employment.</p>
+            
+            <div class="mission-statement">
+                <strong>Our Mission:</strong> Empower futures through accessible education. We're committed to delivering top-tier, industry-relevant clinical research skills at a fraction of the cost, without compromising on quality.
+            </div>
+
+            <h3 style="color: #2c5aa0; margin-top: 2rem;">What Sets Us Apart</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>True Affordability</h3>
+                    <p>Premium education priced for everyone</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Industry-Driven</h3>
+                    <p>Learn exactly what employers demand</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3>Expert Mentorship</h3>
+                    <p>Study under seasoned professionals</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Flexible Learning</h3>
+                    <p>Fit education around your schedule</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="program" style="background: white;">
+        <h2 class="section-title">90-Day Intensive Program</h2>
+        <div class="program-overview">
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Our comprehensive 3-month program is designed to transform you into a job-ready clinical research professional with cutting-edge skills and industry certifications.</p>
+            
+            <div class="program-details">
+                <div class="detail-box">
+                    <h4>📅 Duration</h4>
+                    <p>90 Days (3 Months)</p>
+                </div>
+                <div class="detail-box">
+                    <h4>📊 Curriculum</h4>
+                    <p>Industry-Based, Practical Knowledge</p>
+                </div>
+                <div class="detail-box">
+                    <h4>🎯 Focus</h4>
+                    <p>Clinical Research Excellence</p>
+                </div>
+                <div class="detail-box">
+                    <h4>✅ Outcome</h4>
+                    <p>100% Placement Assistance</p>
+                </div>
+            </div>
+
+            <h3 style="color: #2c5aa0; margin-top: 2rem; margin-bottom: 1rem;">What You'll Get</h3>
+            <div class="highlights">
+                <div class="highlight-item">
+                    <h4>Live Classes</h4>
+                    <p>Interactive sessions led by industry experts</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>1-on-1 Mentorship</h4>
+                    <p>Weekly personalized guidance from professionals</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Practical Tasks</h4>
+                    <p>Real-world assignments and projects</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Industry Certification</h4>
+                    <p>Recognized credentials in clinical research</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Resume Building</h4>
+                    <p>Professional resume crafting & optimization</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Mock Interviews</h4>
+                    <p>Practice with industry recruiters</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>LinkedIn Optimization</h4>
+                    <p>Build your professional online presence</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>100% Placement Support</h4>
+                    <p>Direct access to hiring partner companies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" style="background: white;">
+        <h2 class="section-title">Why Choose Sesura Training Academy</h2>
+        <div class="about-content">
+            <div style="margin-bottom: 2rem;">
+                <h3 style="color: #2c5aa0; margin-bottom: 1rem;">Our 100% Placement Commitment</h3>
+                <p>Education is only half the battle; the real victory is your career success. We don't just hand you a certificate and wish you luck. Our commitment includes:</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Resume Crafting</h3>
+                    <p>Aligning your profile with industry standards</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Mock Interviews</h3>
+                    <p>Live practice with real tech recruiters</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Portfolio Building</h3>
+                    <p>Showcasing real-world projects to employers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Hiring Network</h3>
+                    <p>Direct access to partner companies</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <h3 style="color: #2c5aa0; margin-bottom: 1rem;">Our Promise</h3>
+                <p style="font-size: 1.1rem; color: #666; line-height: 1.8;">You bring the dedication; we will provide the tools, the knowledge, and the gateway to your new career. Together, we can build a future where quality education and career success are universal rights, not premium privileges.</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Placement Assistance</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">90</div>
+                    <div class="stat-label">Days to Master</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">1-1</div>
+                    <div class="stat-label">Mentorship Weekly</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">Expert</div>
+                    <div class="stat-label">Faculty Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" style="background: white;">
+        <h2 class="section-title">Success Stories</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The comprehensive curriculum and hands-on training gave me the confidence to enter the clinical research field. The mentorship was invaluable!"</p>
+                <p class="testimonial-author">- Priya Sharma<br><small>Clinical Research Coordinator</small></p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Within 2 months of completing the program, I landed a position with a leading pharmaceutical company. The placement team was incredibly supportive."</p>
+                <p class="testimonial-author">- Rajesh Kumar<br><small>Clinical Data Analyst</small></p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Excellent faculty, practical learning approach, and genuine commitment to student success. This academy truly delivered on its promises."</p>
+                <p class="testimonial-author">- Anjali Patel<br><small>Regulatory Affairs Specialist</small></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background: white;">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-section">
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">Ready to start your 90-day journey to a successful clinical research career? Contact us today!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📧 Email</h4>
+                    <p><a href="mailto:admissionsesura@gmail.com" style="color: #2c5aa0; text-decoration: none;">admissionsesura@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>📱 Phone</h4>
+                    <p><a href="tel:+919272454819" style="color: #2c5aa0; text-decoration: none;">+91 9272454819</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>🌍 Location</h4>
+                    <p>Based in India | Online Learning Platform</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="mailto:admissionsesura@gmail.com?subject=Interest in 90-Day Clinical Research Program" class="cta-button">Send Inquiry</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3 style="margin-bottom: 1rem;">Sesura Training Academy</h3>
+            <p style="margin-bottom: 1rem;">India's First Online Learning Academy for Clinical Research</p>
+            <p style="margin-bottom: 1rem;">Empowering Futures Through Accessible Education</p>
+            <div class="footer-links">
+                <a href="mailto:admissionsesura@gmail.com">Email</a>
+                <a href="tel:+919272454819">Phone</a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.8; font-size: 0.9rem;">© 2024 Sesura Training Academy. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
